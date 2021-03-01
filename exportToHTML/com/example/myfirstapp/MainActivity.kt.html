@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>MainActivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.example.myfirstapp</span>
+
+<span class="s1">import android.content.Intent</span>
+<span class="s1">import androidx.appcompat.app.AppCompatActivity</span>
+<span class="s1">import android.os.Bundle</span>
+<span class="s1">import android.widget.Button</span>
+<span class="s1">import android.widget.EditText</span>
+<span class="s1">import android.widget.TextView</span>
+<span class="s1">import android.widget.Toast</span>
+
+<span class="s0">class </span><span class="s1">MainActivity : AppCompatActivity() {</span>
+
+    <span class="s1">lateinit </span><span class="s0">var </span><span class="s1">etEmail : EditText</span>
+    <span class="s1">lateinit </span><span class="s0">var </span><span class="s1">etPassword : EditText</span>
+    <span class="s1">lateinit </span><span class="s0">var </span><span class="s1">btnLogin : Button</span>
+    <span class="s1">lateinit </span><span class="s0">var </span><span class="s1">txtSignUp : TextView</span>
+    <span class="s1">lateinit </span><span class="s0">var </span><span class="s1">txtForgotPassword : TextView</span>
+    <span class="s0">val </span><span class="s1">validEmail = </span><span class="s2">&quot;dsc@gmail.com&quot;</span>
+    <span class="s0">val </span><span class="s1">validPassword = </span><span class="s2">&quot;1234&quot;</span>
+
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onCreate(savedInstanceState: Bundle?) {</span>
+        <span class="s0">super</span><span class="s1">.onCreate(savedInstanceState)</span>
+        <span class="s1">setContentView(R.layout.activity_main)</span>
+        <span class="s1">title = </span><span class="s2">&quot;facebook&quot;</span>
+
+        <span class="s1">etEmail = findViewById(R.id.etEmail)</span>
+        <span class="s1">etPassword = findViewById(R.id.etPassword)</span>
+        <span class="s1">btnLogin = findViewById(R.id.btnLogin)</span>
+        <span class="s1">txtSignUp = findViewById(R.id.txtSignUp)</span>
+        <span class="s1">txtForgotPassword = findViewById(R.id.txtForgotPassword)</span>
+
+
+
+        <span class="s1">btnLogin.setOnClickListener {</span>
+            <span class="s0">val </span><span class="s1">email = etEmail.text.toString()</span>
+            <span class="s0">val </span><span class="s1">password = etPassword.text.toString()</span>
+
+            <span class="s0">if</span><span class="s1">((email==validEmail)&amp;&amp;(password==validPassword)) {</span>
+                <span class="s0">val </span><span class="s1">intent = Intent(</span><span class="s0">this</span><span class="s1">@MainActivity</span><span class="s0">, </span><span class="s1">LoginActivity::</span><span class="s0">class</span><span class="s1">.java)</span>
+                <span class="s1">startActivity(intent)</span>
+            <span class="s1">}</span>
+            <span class="s0">else</span><span class="s1">{</span>
+                <span class="s1">Toast.makeText(</span><span class="s0">this</span><span class="s1">@MainActivity</span><span class="s0">, </span><span class="s2">&quot;incorrect login details&quot;</span><span class="s0">, </span><span class="s1">Toast.LENGTH_LONG).show()</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>
